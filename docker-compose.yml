@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  img:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    container_name: NodeJs
+    ports:
+      - 3000:3000
+      - 7000:7000
+      - 9000:9000
+      - 14085:14085
+    volumes:
+      - './opt:/opt'
+    network_mode: bridge
+    tty: true
+    stdin_open: true
